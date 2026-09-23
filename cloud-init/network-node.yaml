@@ -1,0 +1,11 @@
+#cloud-config
+hostname: network-node
+package_update: true  # Equivalent to "apt update"
+package_upgrade: true # Equivalent to "apt upgrade"
+package_reboot_if_required: true  # Reboot only if upgrade needs it (new kernel, libc, etc)
+users:
+  - name: openstack         # Set a username 
+    # password: openstack   # Set a password for user "openstack" 
+    ssh-authorized-keys:
+      - ssh-ed25519 YOUR_PUB_SSH_HERE
+    sudo: ALL=(ALL) NOPASSWD:ALL

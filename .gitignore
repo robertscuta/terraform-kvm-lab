@@ -1,0 +1,13 @@
+*.log
+.env
+.vscode
+config.json
+.DS_Store
+Thumbs.db
+.git
+.terraform
+*.tfstate
+*.tfstate.*
+tfplan
+crash.log
+crash.*.log
