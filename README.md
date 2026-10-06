@@ -1,8 +1,7 @@
 # terraform-kvm-lab
 
-Terraform config to provision a 4-node Ubuntu 24.04 lab (network node, controller, 2x
-compute) on a remote KVM host via the [`dmacvicar/libvirt`](https://registry.terraform.io/providers/dmacvicar/libvirt/latest)
-provider — meant as a base for a Kolla-Ansible OpenStack install (not included here).
+Terraform config to provision a 4-node Ubuntu Server 24.04 lab on a remote KVM host via the [`dmacvicar/libvirt`](https://registry.terraform.io/providers/dmacvicar/libvirt/latest)
+provider.
 
 ## Architecture
 
@@ -77,4 +76,4 @@ ssh openstack@<controller-ip>            # via the injected SSH key
 - `xslt` in the domain resource is `ForceNew` — changing it recreates all 4 domains.
 - Cloud-init only applies on a VM's first boot. To force a re-apply after editing
   `cloud-init/*`, use `terraform apply -replace=...` per domain.
-- No `terraform.tfvars`/`variables.tf` split — intentional, single-file POC for 4 nodes.
+- No `terraform.tfvars`/`variables.tf` split — intentional, single-file POC for 4 node lab.
